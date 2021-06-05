@@ -29,6 +29,8 @@ Bonus Lab:- Add the support to take multiple packages and users as argument
          fi
 - Combine both the scripts.
 - Check file permission.
-- Run Th script
-
+- Run the script
+- ![](installingNignx.jpg)
+- Run script once more to check installation
+- ![](InstalledNginx.jpg)
 
