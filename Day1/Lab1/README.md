@@ -9,7 +9,7 @@ In this lab, we are going to simulate an SCM tool using a shell script.
 
 Bonus Lab:- Add the support to take multiple packages and users as argument
 
-## Instructions to perform this lab
+## Instructions to perform this lab (Part-1 install package)
 - Create a file eg. installPackage.sh 
 - Add script to check weather a package is present or not. You can do it using below script
 	- if ! which nginx > /dev/null 2>&1;
@@ -30,7 +30,19 @@ Bonus Lab:- Add the support to take multiple packages and users as argument
 - Combine both the scripts.
 - Check file permission.
 - Run the script
-- ![](installingNignx.jpg)
+- ![](images/installingNignx.jpg)
 - Run script once more to check installation
-- ![](InstalledNginx.jpg)
+- ![](images/InstalledNginx.jpg)
 
+## Instructions to perform this lab (Part-2 add user)
+- Create a file eg. adduser.sh
+- Add script to check weather user is present
+	- if cat /etc/passwd | grep $1 
+	  then
+		 echo "user is already present"
+	  else
+ 	         echo "Creating user and home directory"
+		 sudo useradd -m $1        
+	  fi
+- Run to create user and check for existing user
+- ![](images/addUser.jpg)
