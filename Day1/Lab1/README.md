@@ -1,4 +1,4 @@
-# DAY 1 
+# DAY 1 Lab1
 
 ## What you will learn from this lab
 In this lab, we are going to simulate an SCM tool using a shell script.
@@ -12,16 +12,16 @@ Bonus Lab:- Add the support to take multiple packages and users as argument
 ## Instructions to perform this lab (Part-1 install package)
 - Create a file eg. installPackage.sh 
 - Add script to check weather a package is present or not. You can do it using below script
-	```
-          if ! which nginx > /dev/null 2>&1;
-          then
-                 echo  "Not Installed"
-          else
-                 echo "$1 is already installed"
-          fi
-	 ```
+```
+	 if ! which nginx > /dev/null 2>&1;
+ 	 then
+ 		echo  "Not Installed"
+	 else
+         echo "$1 is already installed"
+ 	 fi
+```
 - Add script to check your platform and install package accordingly
-	 ```
+```
 	  if [  -n "$(uname -a | grep Ubuntu)" ];
           then
                  sudo apt-get update && sudo apt-get upgrade
@@ -30,7 +30,7 @@ Bonus Lab:- Add the support to take multiple packages and users as argument
                  sudo yum update
                  sudo yum install $1
           fi
-	 ``` 
+```   
 - Combine both the scripts.
 - Check file permission.
 - Run the script
@@ -41,7 +41,7 @@ Bonus Lab:- Add the support to take multiple packages and users as argument
 ## Instructions to perform this lab (Part-2 add user)
 - Create a file eg. adduser.sh
 - Add script to check weather user is present
-         ```
+```
          if cat /etc/passwd | grep $1 
 	  then
 		 echo "user is already present"
@@ -49,6 +49,6 @@ Bonus Lab:- Add the support to take multiple packages and users as argument
  	         echo "Creating user and home directory"
 		 sudo useradd -m $1        
 	  fi
-	 ```  
+```  
 - Run to create user and check for existing user
 - ![](images/addUser.jpg)
