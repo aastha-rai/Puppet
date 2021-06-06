@@ -1,6 +1,6 @@
 # DAY1 Lab4
 
-## "In this lab, we are going to learn the concepts of Puppet classes.
+## In this lab, we are going to learn the concepts of Puppet classes.
 - Create a class called nginx.
 - In the nginx class, please do these things:-
     - Installation of nginx
