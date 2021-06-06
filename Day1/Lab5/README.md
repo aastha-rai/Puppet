@@ -1,4 +1,4 @@
-# DAY1 Lab4
+# DAY1 Lab5
 
 ## In this lab, we are going to learn the concept of Puppet Modules.
 - Create a directory structure for the module with your name.
