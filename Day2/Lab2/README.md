@@ -73,11 +73,39 @@ Bonus Lab:- Create an nginx module and execute it on the remote system."
 	sudo /opt/puppetlabs/bin/puppet cert sign --all
 ```
 
-### Use below command to apply puppet on agents.
+### Create a new module to create a file in /tmp directory.
+- cat /etc/puppetlabs/puppet/puppet.conf and check codedir location
+ 	eg. /etc/puppetlabs/code
+- vi /etc/puppetlabs/code/environments/production/manifests/site.pp and add code to add file and install nginx.
+```
+	file {'/tmp/it_works.txt':                        # resource type file and filename
+	  ensure  => present,                             # make sure it exists
+	  mode    => '0644',                              # file permissions
+	  content => "It works on ",  # Print the eth0 IP fact
+	}
+
+	package { 'nginx':
+	  ensure => installed,
+	}
+```
+
+- Use below command on your puppet agents.
 ```
 	puppet agent --test
 ```
-### 
+- check for changes on puppet agents
+
+### Execute user module on the newly added agent.
+- In similar way try to execute your user module as well
+
+### Add node matching condition for regex of the node name
+- Add notify in site.pp for all nodes starting with "ip" and print message hello
+```
+	node /ip*/ {
+	  notify { "Hello": }
+	}
+```
+- Again run puppet agent --test on your agent server
 
 
 
